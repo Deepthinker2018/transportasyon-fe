@@ -1,0 +1,65 @@
+<!-- Header Navigation Right -->
+<ul class="nav-header pull-right">
+  <li>
+    {{#if hasBlock}}
+      {{yield}}
+    {{else}}
+      {{#bs-dropdown as |dd|}}
+        {{#dd.button class="btn-image"}}
+          <img src="/assets/img/avatars/default-user.jpg" alt="Avatar">
+          WhoAmI?
+          <span class="caret"></span>
+        {{/dd.button}}
+
+        {{#dd.menu class="dropdown-menu-right" as |ddm|}}
+          {{#ddm.item class="dropdown-header"}}Profile{{/ddm.item}}
+          {{#ddm.item}}
+            <a href="">
+              <i class="si si-envelope-open pull-right"></i>
+              <span class="badge badge-primary pull-right">3</span>Inbox
+            </a>
+          {{/ddm.item}}
+          {{#ddm.item}}
+            <a href="">
+              <i class="si si-user pull-right"></i>
+              <span class="badge badge-success pull-right">1</span>Profile
+            </a>
+          {{/ddm.item}}
+          {{#ddm.item}}
+            <a href="">
+              <i class="si si-settings pull-right"></i>Settings
+            </a>
+          {{/ddm.item}}
+          {{#ddm.item class="dropdown-header"}}Actions{{/ddm.item}}
+          {{#ddm.item}}
+            <a href="">
+              <i class="si si-lock pull-right"></i>Lock Account
+            </a>
+          {{/ddm.item}}
+          {{#ddm.item}}
+            <a href="" {{action (optional onLogout)}}>
+              <i class="si si-logout pull-right"></i>Log out
+            </a>
+          {{/ddm.item}}
+        {{/dd.menu}}
+      {{/bs-dropdown}}
+    {{/if}}
+  </li>
+</ul>
+<!-- END Header Navigation Right -->
+
+<!-- Header Navigation Left -->
+<ul class="nav-header pull-left">
+  <li class="hidden-md hidden-lg">
+    {{#bs-button onClick=(action "toggleSidebar" "sidebar_toggle")}}
+      {{fa-icon "navicon"}}
+    {{/bs-button}}
+  </li>
+
+  <li class="hidden-xs hidden-sm">
+    {{#bs-button onClick=(action "toggleSidebar" "sidebar_mini_toggle")}}
+      {{fa-icon "ellipsis-v"}}
+    {{/bs-button}}
+  </li>
+</ul>
+<!-- END Header Navigation Left -->

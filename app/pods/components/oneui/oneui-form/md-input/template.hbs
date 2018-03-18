@@ -1,0 +1,16 @@
+{{#oneui/oneui-form/input-holder errors=errors}}
+  <div class="form-material floating {{if (or value placeholder) 'open'}} {{unless hasError 'form-material-primary'}}">
+    {{input
+      value=value
+      type=type
+      id=(concat "input-" elementId)
+      autofocus=autofocus
+      placeholder=placeholder
+      class="form-control"
+    }}
+
+    <label for="{{concat "input-" elementId}}">
+      {{label}}
+    </label>
+  </div>
+{{/oneui/oneui-form/input-holder}}

@@ -1,0 +1,15 @@
+{{#oneui/oneui-form/input-holder errors=errors}}
+  <label for="{{concat "input-" elementId}}">
+    {{label}}
+  </label>
+
+  {{input
+    autofocus=autofocus
+    class=(concat "form-control text-" textAlign)
+    id=(concat "input-" elementId)
+    placeholder=placeholder
+    type=type
+    value=value
+    readonly=readonly
+  }}
+{{/oneui/oneui-form/input-holder}}

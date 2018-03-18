@@ -1,0 +1,28 @@
+{{#bs-modal
+  onHidden=(pipe-action (action (mut open) false) (action onHidden))
+  backdropClose=(not disabled)
+  size=size
+  open=open as |modal|
+}}
+  <div class="block block-themed block-transparent remove-margin-b">
+    <div class="block-header bg-primary-dark">
+      <ul class="block-options">
+        <li>
+          <button {{action modal.close}} disabled={{disabled}}>{{fa-icon "close"}}</button>
+        </li>
+      </ul>
+
+      <h3 class="block-title">{{title}}</h3>
+    </div>
+
+    <div class="block-content row">
+      {{yield}}
+    </div>
+  </div>
+
+  {{#modal.footer}}
+    {{#bs-button onClick=(action modal.close) disabled=disabled}}
+      {{caption}}
+    {{/bs-button}}
+  {{/modal.footer}}
+{{/bs-modal}}

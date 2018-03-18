@@ -1,0 +1,15 @@
+{{input
+  autofocus=autofocus
+  checked=checked
+  disabled=disabled
+  name=name
+  type="checkbox"
+}}
+
+<span></span>
+
+{{#if hasBlock}}
+  {{yield}}
+{{else}}
+  {{label}}
+{{/if}}

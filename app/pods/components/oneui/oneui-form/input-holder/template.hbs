@@ -1,0 +1,7 @@
+{{yield}}
+
+{{#each errorMessages as |error|}}
+  <div class="help-block text-right animated fadeInDown">
+    {{error}}
+  </div>
+{{/each}}

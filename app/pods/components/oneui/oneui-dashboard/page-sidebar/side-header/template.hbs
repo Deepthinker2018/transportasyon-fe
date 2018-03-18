@@ -1,0 +1,12 @@
+<button class="btn btn-link text-gray pull-right hidden-md hidden-lg" {{action onClose}}>
+  {{fa-icon "times"}}
+</button>
+
+{{#unless hasBlock}}
+  {{#link-to "dashboard" class="h5 text-white"}}
+    {{fa-icon "circle-o-notch" class="text-primary"}}
+    <span class="h4 font-w600 sidebar-mini-hide">ne</span>
+  {{/link-to}}
+{{else}}
+  {{yield}}
+{{/unless}}

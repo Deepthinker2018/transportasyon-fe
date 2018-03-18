@@ -1,0 +1,21 @@
+<ul class="nav-main">
+  {{#if hasBlock}}
+    {{yield}}
+  {{else}}
+    <li>
+      <a href="">
+        <i class="si si-speedometer"></i>
+        <span class="sidebar-mini-hide">Dashboard</span>
+      </a>
+    </li>
+
+    <li class="nav-main-heading">
+      <span class="sidebar-mini-hide">Super Admin Interface</span>
+    </li>
+    <li>
+      <a href="">
+        <i class="si si-grid"></i> Projects
+      </a>
+    </li>
+  {{/if}}
+</ul>

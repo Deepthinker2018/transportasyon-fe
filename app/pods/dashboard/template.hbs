@@ -1,0 +1,56 @@
+{{#oneui/oneui-dashboard as |dashboard|}}
+  {{#dashboard.sidebar as |sidebar|}}
+    {{#sidebar.header}}
+      {{#link-to "dashboard" class="h3"}}
+        <span class="text-primary">
+          Transportasyon
+        </span>
+      {{/link-to}}
+    {{/sidebar.header}}
+
+    {{#sidebar.content}}
+      <li>
+        {{#link-to "dashboard"}}
+          {{fa-icon "dashboard" fixedWidth=true}}
+          <span class="sidebar-mini-hide">Dashboard</span>
+        {{/link-to}}
+      </li>
+
+      <li class="nav-main-heading">
+        <span class="sidebar-mini-hide">Admin Interface</span>
+      </li>
+      <li>
+        <a href="">
+          {{fa-icon "briefcase" fixedWidth=true}}
+          <span class="sidebar-mini-hide">Projects</span>
+        </a>
+      </li>
+    {{/sidebar.content}}
+  {{/dashboard.sidebar}}
+
+  {{#dashboard.header}}
+    {{#bs-dropdown as |dd|}}
+      {{#dd.button class="btn-image"}}
+        <img src="/assets/img/avatars/default-user.jpg" alt="Avatar">
+        User
+        <span class="caret"></span>
+      {{/dd.button}}
+
+      {{#dd.menu class="dropdown-menu-right" as |ddm|}}
+        {{#ddm.item class="dropdown-header"}}
+          Actions
+        {{/ddm.item}}
+        {{#ddm.item}}
+          <a href="" {{action "logout"}}>
+            {{fa-icon "sign-out" class="pull-right" fixedWidth=true}}
+            Log out
+          </a>
+        {{/ddm.item}}
+      {{/dd.menu}}
+    {{/bs-dropdown}}
+  {{/dashboard.header}}
+
+  {{#dashboard.main}}
+    {{outlet}}
+  {{/dashboard.main}}
+{{/oneui/oneui-dashboard}}
