@@ -1,0 +1,8 @@
+{{yield
+  (hash
+    sidebar=(component "mainui/mainui-dashboard/page-sidebar")
+    header=(component "mainui/mainui-dashboard/page-header" user=user onLogout=onLogout)
+    main=(component "mainui/mainui-dashboard/page-main")
+    footer=(component "mainui/mainui-dashboard/page-footer")
+  )
+}}

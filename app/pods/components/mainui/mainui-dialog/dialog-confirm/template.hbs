@@ -5,7 +5,7 @@
   onHidden=(pipe-action (action (mut open) false) (action (optional onHidden)))
   onSubmit=(action onSubmit) as |modal|
 }}
-  {{#oneui/oneui-panel class="block-transparent" as |panel|}}
+  {{#mainui/mainui-panel class="block-transparent" as |panel|}}
     {{#panel.header type="primary-dark"}}
       <ul class="block-options">
         <li>
@@ -21,7 +21,7 @@
     {{#panel.content}}
       {{yield modal}}
     {{/panel.content}}
-  {{/oneui/oneui-panel}}
+  {{/mainui/mainui-panel}}
 
   {{#modal.footer}}
     {{#bs-button onClick=(action modal.submit) disabled=disabled type="primary"}}
