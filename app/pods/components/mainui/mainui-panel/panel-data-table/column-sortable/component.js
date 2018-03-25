@@ -1,6 +1,5 @@
-import Ember from 'ember';
-
-const { Component, computed, get, set } = Ember;
+import Component from '@ember/component';
+import { computed, get, set } from '@ember/object';
 
 const ATTR_IS_DESCENDING = '_isDescending';
 

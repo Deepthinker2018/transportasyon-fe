@@ -1,7 +1,5 @@
 import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
-import Ember from 'ember';
-
-const { Route } = Ember;
+import Route from '@ember/routing/route';
 
 export default Route.extend(ApplicationRouteMixin, {
   routeAfterAuthentication: 'dashboard'

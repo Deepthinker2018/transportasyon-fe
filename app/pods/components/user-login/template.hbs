@@ -2,6 +2,18 @@
   <i class="fa fa-2x fa-circle-o-notch text-primary"></i>
   <p class="text-muted push-15-t">Transportasyon</p>
 </div>
+
+{{#if errorMessage}}
+  {{#bs-alert
+    class="animated fadeIn"
+    type="danger"
+    dismissible=false
+  }}
+    {{fa-icon "warning"}}
+    {{errorMessage}}
+  {{/bs-alert}}
+{{/if}}
+
 {{#mainui/mainui-form onSubmit=(action "login") class="form-horizontal push-30-t" as |form|}}
   <fieldset disabled={{disabled}}>
     <div class="form-group">
