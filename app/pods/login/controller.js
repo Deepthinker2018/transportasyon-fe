@@ -1,16 +1,10 @@
 import FocusErrorMixin from 'transportasyon-fe/mixins/focus-error-mixin';
-import Ember from 'ember';
-
-const {
-  Controller,
-  computed,
-  get,
-  inject,
-  set
-} = Ember;
+import Controller from '@ember/controller';
+import { computed, get, set } from '@ember/object';
+import { inject as service } from '@ember/service';
 
 export default Controller.extend(FocusErrorMixin, {
-  session: inject.service(),
+  session: service(),
 
   errors: computed('error', function() {
     return get(this, 'error.errors');
